@@ -2,6 +2,8 @@
   "name": "JawboneUpNodeDemo",
   "version": "0.0.1",
   "description": "A demo to show how to pull in Jawbone data",
+  "engines": {
+    "node": "4.1.1"
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
