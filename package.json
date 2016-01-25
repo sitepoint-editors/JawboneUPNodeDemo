@@ -2,6 +2,10 @@
   "name": "JawboneUpNodeDemo",
   "version": "0.0.1",
   "description": "A demo to show how to pull in Jawbone data",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/annegentle/JawboneUPNodeDemo.git"
+  },
   "engines": {
     "node": "4.1.1"
     },
