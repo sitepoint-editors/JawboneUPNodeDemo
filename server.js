@@ -15,8 +15,8 @@ var express = require('express'),
        callbackURL: 'https://localhost:5000/sleepdata'
     },
 	sslOptions = {
-		key: fs.readFileSync('./server.key'),
-		cert: fs.readFileSync('./server.crt')
+		key: fs.readFileSync('./etc/letsencrypt/live/sleepify.me/privatekey.pem'),
+		cert: fs.readFileSync('./etc/letsencrypt/live/sleepify.me/certificate.pem')
 	};
 
 	app.use(bodyParser.json());
