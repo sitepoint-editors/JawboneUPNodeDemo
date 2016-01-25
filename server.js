@@ -6,13 +6,13 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	passport = require('passport'),
 	JawboneStrategy = require('passport-oauth').OAuth2Strategy,
-	port = 5000,
+	port = 8080,
 	jawboneAuth = {
-       clientID: 'YOURID',
-       clientSecret: 'YOURSECRET',
+       clientID: 'LV7d6QhkKgo',
+       clientSecret: 'ad1d2378869985abb5a0bbe8e0b70e665dcc2f2b',
        authorizationURL: 'https://jawbone.com/auth/oauth2/auth',
        tokenURL: 'https://jawbone.com/auth/oauth2/token',
-       callbackURL: 'https://localhost:5000/sleepdata'
+       callbackURL: 'https://localhost:8080/sleepdata'
     };
 
 	app.use(bodyParser.json());
@@ -86,6 +86,6 @@ passport.use('jawbone', new JawboneStrategy({
     });
 }));
 
-var secureServer = https.createServer(sslOptions, app).listen(port, function(){
+var secureServer = https.createServer(app).listen(port, function(){
   	console.log('UP server listening on ' + port);
 });
