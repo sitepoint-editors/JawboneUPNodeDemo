@@ -13,11 +13,7 @@ var express = require('express'),
        authorizationURL: 'https://jawbone.com/auth/oauth2/auth',
        tokenURL: 'https://jawbone.com/auth/oauth2/token',
        callbackURL: 'https://localhost:5000/sleepdata'
-    },
-	sslOptions = {
-		key: fs.readFileSync('./server.key'),
-		cert: fs.readFileSync('./server.crt')
-	};
+    };
 
 	app.use(bodyParser.json());
 
