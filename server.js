@@ -8,11 +8,11 @@ var express = require('express'),
 	JawboneStrategy = require('passport-oauth').OAuth2Strategy,
 	port = 5000,
 	jawboneAuth = {
-       clientID: 'YOURID',
-       clientSecret: 'YOURSECRET',
-       authorizationURL: 'https://jawbone.com/auth/oauth2/auth',
-       tokenURL: 'https://jawbone.com/auth/oauth2/token',
-       callbackURL: 'https://localhost:5000/sleepdata'
+		clientID: process.env.JAWBONE_ID,
+		clientSecret: process.env.JAWBONE_SECRET,
+	authorizationURL: 'https://jawbone.com/auth/oauth2/auth',
+	tokenURL: 'https://jawbone.com/auth/oauth2/token',
+	callbackURL: 'https://' + process.env.DOMAIN + '/sleepdata'
 	};
 
 	app.use(bodyParser.json());
