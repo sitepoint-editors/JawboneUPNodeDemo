@@ -1,7 +1,7 @@
 var express = require('express'),
 	app = express(),
 	ejs = require('ejs'),
-	https = require('https'),
+	http = require('http'),
 	fs = require('fs'),
 	bodyParser = require('body-parser'),
 	passport = require('passport'),
@@ -13,10 +13,6 @@ var express = require('express'),
        authorizationURL: 'https://jawbone.com/auth/oauth2/auth',
        tokenURL: 'https://jawbone.com/auth/oauth2/token',
        callbackURL: 'https://localhost:5000/sleepdata'
-    },
-	sslOptions = {
-		key: fs.readFileSync('./etc/letsencrypt/live/sleepify.me/privatekey.pem'),
-		cert: fs.readFileSync('./etc/letsencrypt/live/sleepify.me/certificate.pem')
 	};
 
 	app.use(bodyParser.json());
@@ -90,6 +86,6 @@ passport.use('jawbone', new JawboneStrategy({
     });
 }));
 
-var secureServer = https.createServer(sslOptions, app).listen(port, function(){
+var secureServer = http.createServer(app).listen(port, function(){
   	console.log('UP server listening on ' + port);
 });
