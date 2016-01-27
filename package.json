@@ -2,6 +2,9 @@
   "name": "JawboneUpNodeDemo",
   "version": "0.0.1",
   "description": "A demo to show how to pull in Jawbone data",
+  "engines": {
+    "node": "4.1.1"
+    },
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -15,6 +18,7 @@
     "https": "^1.0.0",
     "jawbone-up": "^0.1.2",
     "passport": "^0.2.1",
-    "passport-oauth": "^1.0.0"
+    "passport-oauth": "^1.0.0",
+    "body-parser": "^1.14.2"
   }
 }
